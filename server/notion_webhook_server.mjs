@@ -85,6 +85,7 @@ async function handleWebhook(rawBody, headers, res) {
   }
 
   if (body.verification_token) {
+    console.log("NOTION_VERIFICATION_TOKEN:", body.verification_token);
     if (WEBHOOK_VERIFICATION_TOKEN && body.verification_token !== WEBHOOK_VERIFICATION_TOKEN) {
       return send(res, 403, { ok: false, error: "Verification token mismatch" });
     }
