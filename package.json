@@ -1,0 +1,13 @@
+{
+  "name": "notion-snippet-webhook",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server/notion_webhook_server.mjs",
+    "sync:manual": "node scripts/sync_notion_to_snippet.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

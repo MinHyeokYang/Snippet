@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: notion-snippet-webhook
+    runtime: node
+    plan: free
+    autoDeploy: true
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    envVars:
+      - key: NOTION_TOKEN
+        sync: false
+      - key: NOTION_DATABASE_ID
+        sync: false
+      - key: SNIPPET_API_TOKEN
+        sync: false
+      - key: SNIPPET_API_URL
+        value: "https://api.1000.school/daily-snippets"
+      - key: SNIPPET_API_METHOD
+        value: "POST"
+      - key: WEBHOOK_PATH
+        value: "/notion-webhook"
